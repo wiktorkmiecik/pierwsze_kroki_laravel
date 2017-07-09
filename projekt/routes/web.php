@@ -50,16 +50,17 @@ Route::group([
         'uses' => 'PagesController@destroy',
         'as' => 'pages.delete'
     ]);
+    
+     Route::get('pages/{id}', [
+        'uses' => 'PagesController@show',
+        'as' => 'pages.show'
+    ]);
 
-
-//Route::resource('/pages', 'PagesController');
 });
 
 
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
-
-Route::get('/pages/{id}', 'PagesController@show');
 
 Auth::routes();
 
